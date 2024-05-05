@@ -574,6 +574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentPlayer: {fileID: 0}
   distanceAhead: 3.36
+  PlayerActive: 1
+  BallPassed: 0
 --- !u!54 &953538835
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -687,7 +689,7 @@ GameObject:
   - component: {fileID: 1262691315}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: PlayerCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c2fa8a23c42b94bb6b01ff1fd32b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SphereRadius: 3.56
+  SphereRadius: 2.54
   SphereDistance: 1.27
   ballController: {fileID: 0}
 --- !u!54 &1282220366

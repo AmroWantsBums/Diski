@@ -7,7 +7,8 @@ public class BallController : MonoBehaviour
     public GameObject CurrentPlayer;
     private Rigidbody BallRb;
     public float distanceAhead;
-    private bool PlayerActive = true;
+    public bool PlayerActive = true;
+    public bool BallPassed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +37,6 @@ public class BallController : MonoBehaviour
         PlayerActive = false;
         BallRb.AddForce(CurrentPlayer.transform.forward * 1000);
         CurrentPlayer = null;
+        BallPassed = true;  
     }
 }

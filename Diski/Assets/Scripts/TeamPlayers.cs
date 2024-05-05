@@ -21,8 +21,9 @@ public class TeamPlayers : MonoBehaviour
         {
             if (Hit.collider.gameObject.name == "Ball")
             {
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
                 ballController.CurrentPlayer = Hit.collider.gameObject;
+                ActivatePlayer();
             }
         }
     }
@@ -33,16 +34,20 @@ public class TeamPlayers : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, SphereRadius);
     }
 
-    /*void ActivatePlayer()
+    void ActivatePlayer()
     {
-        GameObject Parent;
-        for (int i = 0; i < Parent.childCount; i++)
+        Debug.Log("The method is running");
+        GameObject Parent = gameObject;
+        for (int i = 0; i < Parent.transform.childCount; i++)
         {
-            GameObject childObject = parentTransform.GetChild(i).gameObject;
-            if (i.gameObject.CompareTag("Camera"))
+            GameObject childObject = Parent.transform.GetChild(i).gameObject;
+            if (childObject.CompareTag("PlayerCamera"))
             {
-                i.gameObject
+                ballController.CurrentPlayer = gameObject;
+                ballController.PlayerActive = true;
+                ballController.BallPassed = false;
+                childObject.gameObject.SetActive(true);
             }
         }
-    }*/
+    }
 }

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ballController.CurrentPlayer.name == gameObject.name)
+        if (ballController.CurrentPlayer != null && ballController.CurrentPlayer.name == gameObject.name)
         {
             float MouseX = Input.GetAxis("Mouse X");
             Vector3 Rotation = new Vector3(0f, MouseX * RotationSpeed * Time.deltaTime, 0f);
